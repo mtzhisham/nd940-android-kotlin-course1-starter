@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="fragment"
+            type="com.udacity.shoestore.WelcomeFragment"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".WelcomeFragment">
+
+            <!-- TODO: Update blank fragment layout -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/instructionTv"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/instructionSubTv"
+                android:text="Welcome"
+                android:gravity="center"
+                app:layout_constraintHeight_percent=".1"
+                />
+
+            <TextView
+                app:layout_constraintHeight_percent=".1"
+
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/instructionSubTv"
+                app:layout_constraintTop_toBottomOf="@id/instructionTv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="@string/hello_blank_fragment"
+                android:gravity="center"
+                />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintWidth_percent=".2"
+                app:layout_constraintHorizontal_bias=".9"
+                app:layout_constraintVertical_bias="1"
+                app:layout_constraintHeight_percent=".07"
+                android:layout_margin="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/nextBtn"
+                android:onClick="@{v -> fragment.onNextClick(v)}"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.udacity.shoestore.LoginViewModel"/>
+
+        <variable
+            name="navDirection"
+            type="androidx.navigation.NavDirections"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".LoginFragment"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/emailEt"
+            app:layout_constraintBottom_toTopOf="@id/passwordTv"
+            app:layout_constraintEnd_toStartOf="@id/emailEt"
+            android:id="@+id/emailTv"
+            android:text="Email"
+            app:layout_constraintHeight_percent=".1"
+            app:layout_constraintWidth_percent=".2"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:gravity="center"
+            android:layout_margin="4dp"
+            />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toEndOf="@id/emailTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/passwordEt"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/emailEt"
+            android:hint="Email"
+            app:layout_constraintHeight_percent=".1"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:layout_margin="4dp"
+            android:textColor="@color/colorAccent"
+
+            />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emailTv"
+            app:layout_constraintBottom_toBottomOf="@id/passwordEt"
+            app:layout_constraintEnd_toStartOf="@id/passwordEt"
+            android:id="@+id/passwordTv"
+            android:text="Password"
+
+            app:layout_constraintHeight_percent=".1"
+            app:layout_constraintWidth_percent=".2"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:gravity="center"
+            android:layout_margin="4dp"
+
+
+            />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toEndOf="@id/passwordTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emailEt"
+            app:layout_constraintBottom_toTopOf="@id/loginBtn"
+            android:id="@+id/passwordEt"
+            android:hint="Password"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintHeight_percent=".1"
+            app:layout_constraintVertical_chainStyle="packed"
+
+            android:layout_margin="4dp"
+
+            />
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/passwordEt"
+            app:layout_constraintBottom_toTopOf="@id/signUpBtn"
+            android:id="@+id/loginBtn"
+            android:text="Login"
+
+            app:layout_constraintHeight_percent=".07"
+            app:layout_constraintWidth_percent=".3"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:layout_marginTop="32dp"
+            android:onClick="@{() -> viewModel.setNewDestination(navDirection.getActionId())}"
+
+
+
+            />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/loginBtn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/signUpBtn"
+            android:text="Sign up"
+
+            app:layout_constraintHeight_percent=".07"
+            app:layout_constraintWidth_percent=".3"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:layout_marginTop="32dp"
+            android:onClick="@{() -> viewModel.setNewDestination(navDirection.getActionId())}"
+
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
