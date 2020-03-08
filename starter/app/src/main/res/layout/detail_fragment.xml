@@ -3,6 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+    <variable
+        name="viewModel"
+        type="com.udacity.shoestore.ShoeViewModel"/>
+
+
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe"/>
+
+
+        <variable
+            name="navDirectionBack"
+            type="androidx.navigation.NavDirections"/>
+
+        <import type="com.udacity.shoestore.Converter"/>
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -43,6 +61,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/nameTv"
                 app:layout_constraintEnd_toEndOf="parent"
+                android:text="@={viewModel.shoe.name}"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -81,6 +100,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/companyTv"
                 app:layout_constraintEnd_toEndOf="parent"
+                android:text="@={viewModel.shoe.company}"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -110,15 +130,19 @@
 
 
                 />
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/sizeEt"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:hint="Size"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/sizeTv"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/sizeTv"
+                app:layout_constraintTop_toTopOf="parent"
+                android:inputType="numberDecimal"
+                app:layout_constraintVertical_bias="0.0"
+                android:text="@={Converter.doubleToString(viewModel.shoe.size)}"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -131,7 +155,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent=".1"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/cancelBtn"
             >
 
 
@@ -158,13 +182,52 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/descriptionTv"
                 app:layout_constraintEnd_toEndOf="parent"
+                android:text="@={viewModel.shoe.description}"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/saveBtn"
+            app:layout_constraintTop_toBottomOf="@id/descriptionCl"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/cancelBtn"
+            android:text="Cancel"
+
+            app:layout_constraintHeight_percent=".07"
+            app:layout_constraintWidth_percent=".3"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:onClick="@{() -> viewModel.setNewDestination(navDirectionBack.getActionId())}"
+
+            />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toEndOf="@id/cancelBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/cancelBtn"
+            app:layout_constraintBottom_toBottomOf="@id/cancelBtn"
+            android:id="@+id/saveBtn"
+            android:text="Save"
+
+            app:layout_constraintHeight_percent=".07"
+            app:layout_constraintWidth_percent=".3"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:onClick="@{() -> viewModel.createShoe()}"
+            />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
+
+<!--    nameEt.getText().toString(), sizeEt.getText().toString(),companyEt.getText().toString(),descriptionEt.getText().toString()-->
+
+
 
