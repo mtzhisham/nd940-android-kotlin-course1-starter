@@ -47,7 +47,6 @@ class DetailFragment : Fragment() {
 
             it?.let {
 
-                Toast.makeText(activity, it.toString(), Toast.LENGTH_SHORT).show()
                 findNavController().navigate(it)
                 viewModel.setNewDestination(null)
             }

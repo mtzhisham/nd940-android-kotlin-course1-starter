@@ -26,24 +26,6 @@ class ShoeViewModel : ViewModel() {
         shoeList.value?.add(shoe)
     }
 
-
-
-    fun createShoe(name: String,  size: String, company: String, descreption: String )  {
-        if (name.isBlank() || name.isEmpty()){  return}
-        if (name.isBlank() || name.isEmpty()){  return}
-        if (name.isBlank() || name.isEmpty()){  return}
-        if (name.isBlank() || name.isEmpty()){  return}
-
-
-        shoeList.value?.forEach{
-            Timber.d(it.toString())
-        }
-
-        Timber.d("moataz" +" " + name+" " + size.toDouble()+" " + company+" " + descreption)
-        setNewDestination(DetailFragmentDirections.actionDetailFragmentToShoeListFragment().actionId)
-    }
-
-
     fun createShoe()  {
 
         if (shoe.name.isBlank() || shoe.name.isEmpty()){  return}
@@ -53,6 +35,7 @@ class ShoeViewModel : ViewModel() {
 
         Timber.d(shoe.toString())
         addShoeToList(shoe)
+        shoe = Shoe()
       setNewDestination(DetailFragmentDirections.actionDetailFragmentToShoeListFragment().actionId)
     }
 

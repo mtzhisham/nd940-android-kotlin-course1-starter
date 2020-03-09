@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.databinding.ShoeListFragmentBinding
+import com.udacity.shoestore.databinding.ShoeListItemBinding
 import timber.log.Timber
 
 
@@ -24,12 +25,14 @@ class ShoeListFragment : Fragment() {
 
     private lateinit var viewModel: ShoeViewModel
     private lateinit var binding: ShoeListFragmentBinding
+    private lateinit var  itemBinding: ShoeListItemBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater,R.layout.shoe_list_fragment, container, false)
+
         return binding.root
     }
 
@@ -52,16 +55,14 @@ class ShoeListFragment : Fragment() {
         viewModel.getShoeList().observe(viewLifecycleOwner, Observer {
 
             it.forEach{
-                Timber.d(it.toString())
+                itemBinding = DataBindingUtil.inflate(layoutInflater,R.layout.shoe_list_item, binding.shoeListLL, false )
+                itemBinding.nameTv.text = it.name
+                itemBinding.sizeTv.text = it.size.toString()
+                itemBinding.companyTv.text = it.company
+                itemBinding.descreptionTv.text = it.description
 
-                val valueTV = TextView(activity)
-                valueTV.text = it.name
-                valueTV.layoutParams = LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.MATCH_PARENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT
-                )
+                binding.shoeListLL.addView(itemBinding.root)
 
-               binding.shoeListLL.addView(valueTV)
 
             }
 
@@ -73,7 +74,6 @@ class ShoeListFragment : Fragment() {
 
             it?.let {
 
-                Toast.makeText(activity, it.toString(), Toast.LENGTH_SHORT).show()
                 findNavController().navigate(it)
                 viewModel.setNewDestination(null)
             }
