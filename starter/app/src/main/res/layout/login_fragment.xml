@@ -28,7 +28,7 @@
             app:layout_constraintBottom_toTopOf="@id/passwordTv"
             app:layout_constraintEnd_toStartOf="@id/emailEt"
             android:id="@+id/emailTv"
-            android:text="Email"
+            android:text="@string/email"
             app:layout_constraintHeight_percent=".1"
             app:layout_constraintWidth_percent=".2"
             app:layout_constraintVertical_chainStyle="packed"
@@ -44,12 +44,11 @@
             app:layout_constraintBottom_toTopOf="@id/passwordEt"
             app:layout_constraintTop_toTopOf="parent"
             android:id="@+id/emailEt"
-            android:hint="Email"
+            android:hint="@string/email"
             app:layout_constraintHeight_percent=".1"
             app:layout_constraintVertical_chainStyle="packed"
             android:layout_margin="4dp"
-            android:textColor="@color/colorAccent"
-
+            style="@style/EditTextStyle"
             />
 
 
@@ -61,7 +60,7 @@
             app:layout_constraintBottom_toBottomOf="@id/passwordEt"
             app:layout_constraintEnd_toStartOf="@id/passwordEt"
             android:id="@+id/passwordTv"
-            android:text="Password"
+            android:text="@string/password"
 
             app:layout_constraintHeight_percent=".1"
             app:layout_constraintWidth_percent=".2"
@@ -80,8 +79,7 @@
             app:layout_constraintTop_toBottomOf="@id/emailEt"
             app:layout_constraintBottom_toTopOf="@id/loginBtn"
             android:id="@+id/passwordEt"
-            android:hint="Password"
-            android:textColor="@color/colorAccent"
+            android:hint="@string/password"
             app:layout_constraintHeight_percent=".1"
             app:layout_constraintVertical_chainStyle="packed"
 
@@ -93,13 +91,13 @@
 
         <com.google.android.material.button.MaterialButton
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/passwordEt"
             app:layout_constraintBottom_toTopOf="@id/signUpBtn"
             android:id="@+id/loginBtn"
-            android:text="Login"
+            android:text="@string/login"
 
             app:layout_constraintHeight_percent=".07"
             app:layout_constraintWidth_percent=".3"
@@ -114,13 +112,13 @@
 
         <com.google.android.material.button.MaterialButton
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/loginBtn"
             app:layout_constraintBottom_toBottomOf="parent"
             android:id="@+id/signUpBtn"
-            android:text="Sign up"
+            android:text="@string/sign_up"
 
             app:layout_constraintHeight_percent=".07"
             app:layout_constraintWidth_percent=".3"

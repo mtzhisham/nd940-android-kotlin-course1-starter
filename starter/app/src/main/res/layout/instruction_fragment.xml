@@ -23,7 +23,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@id/instructionSubTv"
-            android:text="Instructions"
+            android:text="@string/instructions"
             android:gravity="center"
             app:layout_constraintHeight_percent=".1"
             />
@@ -38,7 +38,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:text="@string/hello_blank_fragment"
+            android:text="@string/app_instructions"
             android:gravity="center"
             />
 
@@ -57,6 +57,8 @@
             app:layout_constraintTop_toTopOf="parent"
             android:id="@+id/nextBtn"
             android:onClick="@{v -> fragment.onNextClick(v)}"
+            android:text="@string/next"
+
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

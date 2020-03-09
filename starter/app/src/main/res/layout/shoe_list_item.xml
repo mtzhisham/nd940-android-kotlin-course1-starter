@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="8dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/nameTv"
+                android:text="@string/name_label"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/companyTv"
+                app:layout_constraintHeight_percent=".05"
+                style="@style/AltLabelStyle"
+                android:id="@+id/nameLabelTv"
+
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/nameTv"
+                app:layout_constraintStart_toEndOf="@id/nameLabelTv"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/sizeLabelTv"
+                app:layout_constraintBottom_toTopOf="@id/companyTv"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintHeight_percent=".1"
+                style="@style/TextViewStyle"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/nameTv"
+                app:layout_constraintEnd_toStartOf="@id/sizeTv"
+                android:text="@string/size_label"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/companyTv"
+                app:layout_constraintHeight_percent=".05"
+                style="@style/AltLabelStyle"
+                android:id="@+id/sizeLabelTv"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/sizeTv"
+                app:layout_constraintStart_toEndOf="@id/sizeLabelTv"
+                app:layout_constraintTop_toTopOf="@id/nameTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/companyTv"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintHeight_percent=".1"
+                style="@style/TextViewStyle"
+
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                />
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/companyTv"
+                android:text="@string/company_label"
+                app:layout_constraintHeight_percent=".05"
+                style="@style/AltLabelStyle"
+                android:id="@+id/companyLabelTv"
+
+                app:layout_constraintTop_toBottomOf="@id/nameTv"
+                app:layout_constraintBottom_toTopOf="@id/descreptionTv"
+
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/companyTv"
+                app:layout_constraintStart_toEndOf="@id/companyLabelTv"
+                app:layout_constraintTop_toBottomOf="@id/nameTv"
+                app:layout_constraintBottom_toTopOf="@id/descreptionTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintHeight_percent=".1"
+                style="@style/TextViewStyle"
+
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                />
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/descreptionTv"
+                android:text="@string/description_label"
+                app:layout_constraintHeight_percent=".05"
+                style="@style/AltLabelStyle"
+                android:id="@+id/descriptionLabelTv"
+
+
+
+                app:layout_constraintTop_toBottomOf="@id/companyTv"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/descreptionTv"
+                app:layout_constraintStart_toEndOf="@id/descriptionLabelTv"
+                app:layout_constraintTop_toBottomOf="@id/companyTv"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent=".2"
+                app:layout_constraintVertical_chainStyle="packed"
+                style="@style/TextViewStyle"
+
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

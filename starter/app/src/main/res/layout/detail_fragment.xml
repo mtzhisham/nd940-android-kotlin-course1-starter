@@ -8,12 +8,6 @@
         name="viewModel"
         type="com.udacity.shoestore.ShoeViewModel"/>
 
-
-        <variable
-            name="shoe"
-            type="com.udacity.shoestore.models.Shoe"/>
-
-
         <variable
             name="navDirectionBack"
             type="androidx.navigation.NavDirections"/>
@@ -42,7 +36,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:text="Name"
+                android:text="@string/name"
                 android:id="@+id/nameTv"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -50,18 +44,20 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:gravity="center_vertical"
                 app:layout_constraintWidth_percent=".2"
+                style="@style/LabelStyle"
 
                 />
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/nameEt"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:hint="Name"
+                android:hint="@string/name"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/nameTv"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:text="@={viewModel.shoe.name}"
+                style="@style/EditTextStyle"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -80,7 +76,7 @@
 
             <TextView android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:text="Company"
+                android:text="@string/company"
                 android:id="@+id/companyTv"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -88,19 +84,20 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintWidth_percent=".2"
                 android:gravity="center_vertical"
-
-
+                style="@style/LabelStyle"
                 />
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/companyEt"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:hint="Company"
+                android:hint="@string/company"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/companyTv"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:text="@={viewModel.shoe.company}"
+                style="@style/EditTextStyle"
+
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -119,7 +116,7 @@
 
             <androidx.appcompat.widget.AppCompatTextView android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:text="Size"
+                android:text="@string/size"
                 android:id="@+id/sizeTv"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -127,15 +124,14 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintWidth_percent=".2"
                 android:gravity="center_vertical"
-
-
+                style="@style/LabelStyle"
                 />
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/sizeEt"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:hint="Size"
+                android:hint="@string/size"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/sizeTv"
@@ -143,6 +139,7 @@
                 android:inputType="numberDecimal"
                 app:layout_constraintVertical_bias="0.0"
                 android:text="@={Converter.doubleToString(viewModel.shoe.size)}"
+                style="@style/EditTextStyle"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -162,7 +159,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:text="Description"
+                android:text="@string/description"
                 android:id="@+id/descriptionTv"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -170,19 +167,19 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintWidth_percent=".2"
                 android:gravity="center_vertical"
-
-
+                style="@style/LabelStyle"
                 />
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/descriptionEt"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:hint="Description"
+                android:hint="@string/description"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/descriptionTv"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:text="@={viewModel.shoe.description}"
+                style="@style/EditTextStyle"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -190,14 +187,13 @@
 
         <com.google.android.material.button.MaterialButton
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/saveBtn"
             app:layout_constraintTop_toBottomOf="@id/descriptionCl"
             app:layout_constraintBottom_toBottomOf="parent"
             android:id="@+id/cancelBtn"
-            android:text="Cancel"
-
+            android:text="@string/cancel"
             app:layout_constraintHeight_percent=".07"
             app:layout_constraintWidth_percent=".3"
             app:layout_constraintVertical_chainStyle="packed"
@@ -208,14 +204,13 @@
 
         <com.google.android.material.button.MaterialButton
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             app:layout_constraintStart_toEndOf="@id/cancelBtn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/cancelBtn"
             app:layout_constraintBottom_toBottomOf="@id/cancelBtn"
             android:id="@+id/saveBtn"
-            android:text="Save"
-
+            android:text="@string/save"
             app:layout_constraintHeight_percent=".07"
             app:layout_constraintWidth_percent=".3"
             app:layout_constraintVertical_chainStyle="packed"
@@ -226,8 +221,6 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
-
-<!--    nameEt.getText().toString(), sizeEt.getText().toString(),companyEt.getText().toString(),descriptionEt.getText().toString()-->
 
 
 
